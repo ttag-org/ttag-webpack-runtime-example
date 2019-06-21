@@ -9,3 +9,8 @@ export async function setupi18n() {
     useLocale(locale);
   }
 }
+
+export function switchLang(lang) {
+  cookies.set('lang', lang);
+  window.location.reload();
+}

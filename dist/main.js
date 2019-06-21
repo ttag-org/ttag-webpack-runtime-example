@@ -1663,12 +1663,13 @@ if (false) {} else {
 /*!**************************!*\
   !*** ./src/i18nSetup.js ***!
   \**************************/
-/*! exports provided: setupi18n */
+/*! exports provided: setupi18n, switchLang */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setupi18n", function() { return setupi18n; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "switchLang", function() { return switchLang; });
 /* harmony import */ var ttag__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ttag */ "./node_modules/ttag/index.js");
 /* harmony import */ var ttag__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ttag__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var browser_cookies__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! browser-cookies */ "./node_modules/browser-cookies/src/browser-cookies.js");
@@ -1683,6 +1684,10 @@ async function setupi18n() {
     Object(ttag__WEBPACK_IMPORTED_MODULE_0__["addLocale"])(locale, data);
     Object(ttag__WEBPACK_IMPORTED_MODULE_0__["useLocale"])(locale);
   }
+}
+function switchLang(lang) {
+  browser_cookies__WEBPACK_IMPORTED_MODULE_1___default.a.set('lang', lang);
+  window.location.reload();
 }
 
 /***/ }),
@@ -1699,34 +1704,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ttag__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ttag */ "./node_modules/ttag/index.js");
 /* harmony import */ var ttag__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ttag__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _i18nSetup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./i18nSetup */ "./src/i18nSetup.js");
-/* harmony import */ var browser_cookies__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! browser-cookies */ "./node_modules/browser-cookies/src/browser-cookies.js");
-/* harmony import */ var browser_cookies__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(browser_cookies__WEBPACK_IMPORTED_MODULE_2__);
-
 
 
 
 document.getElementById('en-select').onclick = ev => {
   ev.preventDefault();
-  browser_cookies__WEBPACK_IMPORTED_MODULE_2___default.a.set('lang', 'en');
-  window.location.reload();
+  Object(_i18nSetup__WEBPACK_IMPORTED_MODULE_1__["switchLang"])('en');
 };
 
 document.getElementById('uk-select').onclick = ev => {
   ev.preventDefault();
-  browser_cookies__WEBPACK_IMPORTED_MODULE_2___default.a.set('lang', 'uk');
-  window.location.href = '/';
-  window.location.reload();
-};
-
-const render = () => {
-  document.getElementById('content').innerHTML = `
-  <h2>${ttag__WEBPACK_IMPORTED_MODULE_0__["t"]`Hello with ttag`}</h2>
-  `;
+  Object(_i18nSetup__WEBPACK_IMPORTED_MODULE_1__["switchLang"])('uk');
 };
 
 async function start() {
   await Object(_i18nSetup__WEBPACK_IMPORTED_MODULE_1__["setupi18n"])();
-  render();
+  document.getElementById('content').innerHTML = ttag__WEBPACK_IMPORTED_MODULE_0__["t"]`Hello with ttag`;
 }
 
 start();
