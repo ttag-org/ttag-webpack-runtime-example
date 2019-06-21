@@ -1,8 +1,6 @@
 import { t } from 'ttag';
 import { setupi18n } from './i18nSetup';
 
-__webpack_public_path__ = process.env.ASSET_PATH;
-
 document.getElementById('en-select').onclick = (ev) => {
   ev.preventDefault();
   document.cookie = 'en';

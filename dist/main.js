@@ -182,7 +182,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "./webpack-runtime-example/dist/";
 /******/
 /******/ 	// on error function for async loading
 /******/ 	__webpack_require__.oe = function(err) { console.error(err); throw err; };
@@ -243,7 +243,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var ttag__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ttag */ \"./node_modules/ttag/index.js\");\n/* harmony import */ var ttag__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ttag__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _i18nSetup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./i18nSetup */ \"./src/i18nSetup.js\");\n\n\n__webpack_require__.p = \"./dist/\";\n\ndocument.getElementById('en-select').onclick = ev => {\n  ev.preventDefault();\n  document.cookie = 'en';\n  window.location.reload();\n};\n\ndocument.getElementById('uk-select').onclick = ev => {\n  ev.preventDefault();\n  document.cookie = 'uk';\n  window.location.href = '/';\n  window.location.reload();\n};\n\nconst render = () => {\n  document.getElementById('content').innerHTML = `\n  <h2>${ttag__WEBPACK_IMPORTED_MODULE_0__[\"t\"]`Hello with ttag`}</h2>\n  `;\n};\n\nasync function start() {\n  await Object(_i18nSetup__WEBPACK_IMPORTED_MODULE_1__[\"setupi18n\"])();\n  render();\n}\n\nstart();\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var ttag__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ttag */ \"./node_modules/ttag/index.js\");\n/* harmony import */ var ttag__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ttag__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _i18nSetup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./i18nSetup */ \"./src/i18nSetup.js\");\n\n\n\ndocument.getElementById('en-select').onclick = ev => {\n  ev.preventDefault();\n  document.cookie = 'en';\n  window.location.reload();\n};\n\ndocument.getElementById('uk-select').onclick = ev => {\n  ev.preventDefault();\n  document.cookie = 'uk';\n  window.location.href = '/';\n  window.location.reload();\n};\n\nconst render = () => {\n  document.getElementById('content').innerHTML = `\n  <h2>${ttag__WEBPACK_IMPORTED_MODULE_0__[\"t\"]`Hello with ttag`}</h2>\n  `;\n};\n\nasync function start() {\n  await Object(_i18nSetup__WEBPACK_IMPORTED_MODULE_1__[\"setupi18n\"])();\n  render();\n}\n\nstart();\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

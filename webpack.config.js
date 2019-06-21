@@ -7,7 +7,8 @@ module.exports = {
     main: "./src/index.js"
   },
   output: {
-    path: path.join(__dirname, "./dist")
+    path: path.join(__dirname, "./dist"),
+    publicPath: process.env.ASSET_PATH
   },
   module: {
     rules: [
@@ -21,10 +22,5 @@ module.exports = {
         }
       }
     ]
-  },
-  plugins: [
-    new webpack.DefinePlugin({
-      'process.env.ASSET_PATH': JSON.stringify(process.env.ASSET_PATH)
-    })
-  ]
+  }
 };

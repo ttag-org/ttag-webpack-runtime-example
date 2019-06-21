@@ -6,7 +6,8 @@
   "scripts": {
     "update": "ttag update i18n/uk.po ./src && npm run po2json",
     "po2json": "ttag po2json i18n/uk.po --format=compact > i18n/uk.po.json",
-    "build-dev": "ASSET_PATH=./dist/ webpack"
+    "build-dev": "ASSET_PATH=./dist/ webpack",
+    "build-prod": "ASSET_PATH=./webpack-runtime-example/dist/ webpack"
   },
   "repository": {
     "type": "git",
