@@ -208,7 +208,1354 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("(function webpackUniversalModuleDefinition(root, factory) {\n  if (true) module.exports = factory();else { var i, a; }\n})(this, function () {\n  return (\n    /******/\n    function (modules) {\n      // webpackBootstrap\n\n      /******/\n      // The module cache\n\n      /******/\n      var installedModules = {};\n      /******/\n\n      /******/\n      // The require function\n\n      /******/\n\n      function __webpack_require__(moduleId) {\n        /******/\n\n        /******/\n        // Check if module is in cache\n\n        /******/\n        if (installedModules[moduleId]) {\n          /******/\n          return installedModules[moduleId].exports;\n          /******/\n        }\n        /******/\n        // Create a new module (and put it into the cache)\n\n        /******/\n\n\n        var module = installedModules[moduleId] = {\n          /******/\n          i: moduleId,\n\n          /******/\n          l: false,\n\n          /******/\n          exports: {}\n          /******/\n\n        };\n        /******/\n\n        /******/\n        // Execute the module function\n\n        /******/\n\n        modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);\n        /******/\n\n        /******/\n        // Flag the module as loaded\n\n        /******/\n\n        module.l = true;\n        /******/\n\n        /******/\n        // Return the exports of the module\n\n        /******/\n\n        return module.exports;\n        /******/\n      }\n      /******/\n\n      /******/\n\n      /******/\n      // expose the modules object (__webpack_modules__)\n\n      /******/\n\n\n      __webpack_require__.m = modules;\n      /******/\n\n      /******/\n      // expose the module cache\n\n      /******/\n\n      __webpack_require__.c = installedModules;\n      /******/\n\n      /******/\n      // identity function for calling harmony imports with the correct context\n\n      /******/\n\n      __webpack_require__.i = function (value) {\n        return value;\n      };\n      /******/\n\n      /******/\n      // define getter function for harmony exports\n\n      /******/\n\n\n      __webpack_require__.d = function (exports, name, getter) {\n        /******/\n        if (!__webpack_require__.o(exports, name)) {\n          /******/\n          Object.defineProperty(exports, name, {\n            /******/\n            configurable: false,\n\n            /******/\n            enumerable: true,\n\n            /******/\n            get: getter\n            /******/\n\n          });\n          /******/\n        }\n        /******/\n\n      };\n      /******/\n\n      /******/\n      // getDefaultExport function for compatibility with non-harmony modules\n\n      /******/\n\n\n      __webpack_require__.n = function (module) {\n        /******/\n        var getter = module && module.__esModule ?\n        /******/\n        function getDefault() {\n          return module['default'];\n        } :\n        /******/\n        function getModuleExports() {\n          return module;\n        };\n        /******/\n\n        __webpack_require__.d(getter, 'a', getter);\n        /******/\n\n\n        return getter;\n        /******/\n      };\n      /******/\n\n      /******/\n      // Object.prototype.hasOwnProperty.call\n\n      /******/\n\n\n      __webpack_require__.o = function (object, property) {\n        return Object.prototype.hasOwnProperty.call(object, property);\n      };\n      /******/\n\n      /******/\n      // __webpack_public_path__\n\n      /******/\n\n\n      __webpack_require__.p = \"\";\n      /******/\n\n      /******/\n      // Load entry module and return exports\n\n      /******/\n\n      return __webpack_require__(__webpack_require__.s = 4);\n      /******/\n    }(\n    /************************************************************************/\n\n    /******/\n    [\n    /* 0 */\n\n    /***/\n    function (module, exports, __webpack_require__) {\n      \"use strict\";\n\n      function pluralFnBody(n) {\n        return \"return args[+ (\" + n + \")];\";\n      }\n\n      Object.defineProperty(exports, \"__esModule\", {\n        value: !0\n      });\n      var localeRegExp = /(\\w+)[-_].*/;\n\n      function tryGetLangData(n, a) {\n        if (a[n]) return a[n];\n        var t = n.match(localeRegExp);\n        if (!t) throw new Error(\"Can't find lang or lcale with code \" + n);\n        return a[t[1]];\n      }\n\n      var fnCache = {};\n\n      function createPluralFunc(n) {\n        var a = fnCache[n];\n        return a || (a = new Function(\"n\", \"args\", pluralFnBody(n)), fnCache[n] = a), a;\n      }\n\n      var DATA = {\n        ach: \"2;n>1\",\n        af: \"2;n!=1\",\n        ak: \"2;n>1\",\n        am: \"2;n>1\",\n        an: \"2;n!=1\",\n        ar: \"6;n==0?0:n==1?1:n==2?2:n%100>=3&&n%100<=10?3:n%100>=11?4:5\",\n        arn: \"2;n>1\",\n        ast: \"2;n!=1\",\n        ay: \"1;0\",\n        az: \"2;n!=1\",\n        be: \"3;n%10==1&&n%100!=11?0:n%10>=2&&n%10<=4&&(n%100<10||n%100>=20)?1:2\",\n        bg: \"2;n!=1\",\n        bn: \"2;n!=1\",\n        bo: \"1;0\",\n        br: \"2;n>1\",\n        brx: \"2;n!=1\",\n        bs: \"3;n%10==1&&n%100!=11?0:n%10>=2&&n%10<=4&&(n%100<10||n%100>=20)?1:2\",\n        ca: \"2;n!=1\",\n        cgg: \"1;0\",\n        cs: \"3;n==1?0:(n>=2&&n<=4)?1:2\",\n        csb: \"3;n==1?0:n%10>=2&&n%10<=4&&(n%100<10||n%100>=20)?1:2\",\n        cy: \"4;n==1?0:n==2?1:(n!=8&&n!=11)?2:3\",\n        da: \"2;n!=1\",\n        de: \"2;n!=1\",\n        doi: \"2;n!=1\",\n        dz: \"1;0\",\n        el: \"2;n!=1\",\n        en: \"2;n!=1\",\n        eo: \"2;n!=1\",\n        es: \"2;n!=1\",\n        et: \"2;n!=1\",\n        eu: \"2;n!=1\",\n        fa: \"1;0\",\n        ff: \"2;n!=1\",\n        fi: \"2;n!=1\",\n        fil: \"2;n>1\",\n        fo: \"2;n!=1\",\n        fr: \"2;n>1\",\n        fur: \"2;n!=1\",\n        fy: \"2;n!=1\",\n        ga: \"5;n==1?0:n==2?1:n<7?2:n<11?3:4\",\n        gd: \"4;(n==1||n==11)?0:(n==2||n==12)?1:(n>2&&n<20)?2:3\",\n        gl: \"2;n!=1\",\n        gu: \"2;n!=1\",\n        gun: \"2;n>1\",\n        ha: \"2;n!=1\",\n        he: \"2;n!=1\",\n        hi: \"2;n!=1\",\n        hne: \"2;n!=1\",\n        hr: \"3;n%10==1&&n%100!=11?0:n%10>=2&&n%10<=4&&(n%100<10||n%100>=20)?1:2\",\n        hu: \"2;n!=1\",\n        hy: \"2;n!=1\",\n        id: \"1;0\",\n        is: \"2;n%10!=1||n%100==11\",\n        it: \"2;n!=1\",\n        ja: \"1;0\",\n        jbo: \"1;0\",\n        jv: \"2;n!==0\",\n        ka: \"1;0\",\n        kk: \"1;0\",\n        km: \"1;0\",\n        kn: \"2;n!=1\",\n        ko: \"1;0\",\n        ku: \"2;n!=1\",\n        kw: \"4;n==1?0:n==2?1:n==3?2:3\",\n        ky: \"1;0\",\n        lb: \"2;n!=1\",\n        ln: \"2;n>1\",\n        lo: \"1;0\",\n        lt: \"3;n%10==1&&n%100!=11?0:n%10>=2&&(n%100<10||n%100>=20)?1:2\",\n        lv: \"3;n%10==1&&n%100!=11?0:n!=0?1:2\",\n        mai: \"2;n!=1\",\n        mfe: \"2;n>1\",\n        mg: \"2;n>1\",\n        mi: \"2;n>1\",\n        mk: \"2;n==1||n%10==1?0:1\",\n        ml: \"2;n!=1\",\n        mn: \"2;n!=1\",\n        mni: \"2;n!=1\",\n        mnk: \"3;n==0?0:n==1?1:2\",\n        mr: \"2;n!=1\",\n        ms: \"1;0\",\n        mt: \"4;n==1?0:n==0||(n%100>1&&n%100<11)?1:(n%100>10&&n%100<20)?2:3\",\n        my: \"1;0\",\n        nah: \"2;n!=1\",\n        nap: \"2;n!=1\",\n        nb: \"2;n!=1\",\n        ne: \"2;n!=1\",\n        nl: \"2;n!=1\",\n        nn: \"2;n!=1\",\n        no: \"2;n!=1\",\n        nso: \"2;n!=1\",\n        oc: \"2;n>1\",\n        or: \"2;n!=1\",\n        pa: \"2;n!=1\",\n        pap: \"2;n!=1\",\n        pl: \"3;n==1?0:n%10>=2&&n%10<=4&&(n%100<10||n%100>=20)?1:2\",\n        pms: \"2;n!=1\",\n        ps: \"2;n!=1\",\n        pt: \"2;n!=1\",\n        rm: \"2;n!=1\",\n        ro: \"3;n==1?0:(n==0||(n%100>0&&n%100<20))?1:2\",\n        ru: \"3;n%10==1&&n%100!=11?0:n%10>=2&&n%10<=4&&(n%100<10||n%100>=20)?1:2\",\n        rw: \"2;n!=1\",\n        sah: \"1;0\",\n        sat: \"2;n!=1\",\n        sco: \"2;n!=1\",\n        sd: \"2;n!=1\",\n        se: \"2;n!=1\",\n        si: \"2;n!=1\",\n        sk: \"3;n==1?0:(n>=2&&n<=4)?1:2\",\n        sl: \"4;n%100==1?1:n%100==2?2:n%100==3||n%100==4?3:0\",\n        so: \"2;n!=1\",\n        son: \"2;n!=1\",\n        sq: \"2;n!=1\",\n        sr: \"3;n%10==1&&n%100!=11?0:n%10>=2&&n%10<=4&&(n%100<10||n%100>=20)?1:2\",\n        su: \"1;0\",\n        sv: \"2;n!=1\",\n        sw: \"2;n!=1\",\n        ta: \"2;n!=1\",\n        te: \"2;n!=1\",\n        tg: \"2;n>1\",\n        th: \"1;0\",\n        ti: \"2;n>1\",\n        tk: \"2;n!=1\",\n        tr: \"2;n>1\",\n        tt: \"1;0\",\n        ug: \"1;0\",\n        uk: \"3;n%10==1&&n%100!=11?0:n%10>=2&&n%10<=4&&(n%100<10||n%100>=20)?1:2\",\n        ur: \"2;n!=1\",\n        uz: \"2;n>1\",\n        vi: \"1;0\",\n        wa: \"2;n>1\",\n        wo: \"1;0\",\n        yo: \"2;n!=1\",\n        zh: \"1;0\"\n      };\n\n      function getFormula(n) {\n        return tryGetLangData(n, DATA).split(\";\")[1];\n      }\n\n      function getNPlurals(n) {\n        var a = tryGetLangData(n, DATA);\n        return parseInt(a.split(\";\")[0], 10);\n      }\n\n      function getPluralFunc(n) {\n        return createPluralFunc(getFormula(n));\n      }\n\n      function hasLang(n) {\n        try {\n          return tryGetLangData(n, DATA), !0;\n        } catch (n) {\n          return !1;\n        }\n      }\n\n      function getAvailLangs() {\n        return Object.keys(DATA);\n      }\n\n      exports.getFormula = getFormula, exports.getNPlurals = getNPlurals, exports.getPluralFunc = getPluralFunc, exports.hasLang = hasLang, exports.getAvailLangs = getAvailLangs;\n      /***/\n    },\n    /* 1 */\n\n    /***/\n    function (module, __webpack_exports__, __webpack_require__) {\n      \"use strict\";\n      /* harmony export (binding) */\n\n      __webpack_require__.d(__webpack_exports__, \"b\", function () {\n        return getMsgid;\n      });\n      /* harmony export (binding) */\n\n\n      __webpack_require__.d(__webpack_exports__, \"c\", function () {\n        return msgid2Orig;\n      });\n      /* harmony export (binding) */\n\n\n      __webpack_require__.d(__webpack_exports__, \"d\", function () {\n        return buildStr;\n      });\n      /* harmony export (binding) */\n\n\n      __webpack_require__.d(__webpack_exports__, \"e\", function () {\n        return buildArr;\n      });\n      /* unused harmony export makePluralFunc */\n\n      /* unused harmony export getPluralFunc */\n\n      /* harmony export (immutable) */\n\n\n      __webpack_exports__[\"g\"] = transformTranslateObj;\n      /* harmony export (immutable) */\n\n      __webpack_exports__[\"h\"] = transformCompactObj;\n      /* harmony export (immutable) */\n\n      __webpack_exports__[\"a\"] = dedentStr;\n      /* harmony export (immutable) */\n\n      __webpack_exports__[\"f\"] = getPluralFnForTrans;\n      /* harmony import */\n\n      var __WEBPACK_IMPORTED_MODULE_0_dedent__ = __webpack_require__(5);\n      /* harmony import */\n\n\n      var __WEBPACK_IMPORTED_MODULE_0_dedent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_dedent__);\n      /* harmony import */\n\n\n      var __WEBPACK_IMPORTED_MODULE_1_plural_forms_dist_minimal__ = __webpack_require__(0);\n      /* harmony import */\n\n\n      var __WEBPACK_IMPORTED_MODULE_1_plural_forms_dist_minimal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_plural_forms_dist_minimal__);\n\n      function _slicedToArray(arr, i) {\n        return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();\n      }\n\n      function _nonIterableRest() {\n        throw new TypeError(\"Invalid attempt to destructure non-iterable instance\");\n      }\n\n      function _iterableToArrayLimit(arr, i) {\n        var _arr = [];\n        var _n = true;\n        var _d = false;\n        var _e = undefined;\n\n        try {\n          for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {\n            _arr.push(_s.value);\n\n            if (i && _arr.length === i) break;\n          }\n        } catch (err) {\n          _d = true;\n          _e = err;\n        } finally {\n          try {\n            if (!_n && _i[\"return\"] != null) _i[\"return\"]();\n          } finally {\n            if (_d) throw _e;\n          }\n        }\n\n        return _arr;\n      }\n\n      function _arrayWithHoles(arr) {\n        if (Array.isArray(arr)) return arr;\n      }\n\n      var getMsgid = function getMsgid(str, exprs) {\n        return str.reduce(function (s, l, i) {\n          return s + l + (exprs[i] !== undefined && \"${\".concat(i, \"}\") || '');\n        }, '');\n      };\n\n      var removeSpaces = function removeSpaces(str) {\n        return str.replace(/\\s/g, '');\n      };\n\n      var mem = {};\n\n      var memoize1 = function memoize1(f) {\n        return function (arg) {\n          if (mem[arg]) {\n            return mem[arg];\n          }\n\n          mem[arg] = f(arg);\n          return mem[arg];\n        };\n      };\n\n      var reg = function reg(i) {\n        return new RegExp(\"\\\\$\\\\{(?:[\\\\s]+?|\\\\s?)\".concat(i, \"(?:[\\\\s]+?|\\\\s?)}\"));\n      };\n\n      var memReg = memoize1(reg);\n\n      var msgid2Orig = function msgid2Orig(id, exprs) {\n        return exprs.reduce(function (r, expr, i) {\n          return r.replace(memReg(i), expr);\n        }, id);\n      };\n\n      var buildStr = function buildStr(strs, exprs) {\n        return strs.reduce(function (r, s, i) {\n          return r + s + (exprs[i] !== undefined ? exprs[i] : '');\n        }, '');\n      };\n\n      var buildArr = function buildArr(strs, exprs) {\n        return strs.reduce(function (r, s, i) {\n          return exprs[i] !== undefined ? r.concat(s, exprs[i]) : r.concat(s);\n        }, []);\n      };\n\n      function pluralFnBody(pluralStr) {\n        return \"return args[+ (\".concat(pluralStr, \")];\");\n      }\n\n      var fnCache = {};\n\n      function makePluralFunc(pluralStr) {\n        /* eslint-disable no-new-func */\n        var fn = fnCache[pluralStr];\n\n        if (!fn) {\n          fn = new Function('n', 'args', pluralFnBody(pluralStr));\n          fnCache[pluralStr] = fn;\n        }\n\n        return fn;\n      }\n\n      var pluralRegex = /\\splural ?=?([\\s\\S]*);?/;\n\n      function getPluralFunc(headers) {\n        var pluralFn = pluralRegex.exec(headers['plural-forms'])[1];\n\n        if (pluralFn[pluralFn.length - 1] === ';') {\n          pluralFn = pluralFn.slice(0, -1);\n        }\n\n        return pluralFn;\n      }\n\n      var variableREG = /\\$\\{\\s*([.\\w+\\[\\]])*\\s*\\}/g;\n\n      function getObjectKeys(obj) {\n        var keys = [];\n\n        for (var key in obj) {\n          // eslint-disable-line no-restricted-syntax\n          if (obj.hasOwnProperty(key)) {\n            keys.push(key);\n          }\n        }\n\n        return keys;\n      }\n\n      function replaceVariables(str, obj) {\n        return str.replace(variableREG, function (variable) {\n          return \"${\".concat(obj[removeSpaces(variable)], \"}\");\n        });\n      }\n\n      function getVariablesMap(msgid) {\n        var variableNumberMap = {};\n        var variables = msgid.match(variableREG);\n        if (!variables) return null;\n\n        for (var i = 0; i < variables.length; i++) {\n          variableNumberMap[removeSpaces(variables[i])] = i;\n        }\n\n        return variableNumberMap;\n      }\n\n      function transformTranslate(translate) {\n        var variableNumberMap = getVariablesMap(translate.msgid);\n\n        if (!variableNumberMap) {\n          return translate;\n        }\n\n        var msgid = replaceVariables(translate.msgid, variableNumberMap);\n        var newTranslate = {\n          msgid: msgid\n        };\n\n        if (translate.msgid_plural) {\n          newTranslate.msgid_plural = replaceVariables(translate.msgid_plural, variableNumberMap);\n        }\n\n        newTranslate.msgstr = [];\n        var transStrs = translate.msgstr;\n\n        for (var i = 0; i < transStrs.length; i++) {\n          newTranslate.msgstr.push(replaceVariables(transStrs[i], variableNumberMap));\n        }\n\n        newTranslate.comments = translate.comments;\n        return newTranslate;\n      }\n\n      function transformTranslateObj(translateObj) {\n        var newTranslations = {};\n        var transKeys = getObjectKeys(translateObj.translations);\n\n        for (var i = 0; i < transKeys.length; i++) {\n          var key = transKeys[i];\n          var translation = translateObj.translations[key];\n          var newTranslation = {};\n          var msgids = getObjectKeys(translation);\n\n          for (var j = 0; j < msgids.length; j++) {\n            var msgid = msgids[j];\n            var newTranslate = transformTranslate(translation[msgid]);\n            newTranslation[newTranslate.msgid] = newTranslate;\n          }\n\n          newTranslations[key] = newTranslation;\n        }\n\n        translateObj.translations = newTranslations;\n        return translateObj;\n      }\n\n      function transformCompactTranslate(msgid, translations) {\n        var variableNumberMap = getVariablesMap(msgid);\n\n        if (!variableNumberMap) {\n          return [msgid, translations];\n        }\n\n        var newMsgid = replaceVariables(msgid, variableNumberMap);\n        var newTranslations = translations.map(function (trans) {\n          return replaceVariables(trans, variableNumberMap);\n        });\n        return [newMsgid, newTranslations];\n      }\n\n      function transformCompactObj(compactObj) {\n        var newObj = {\n          headers: compactObj.headers\n        };\n        var newContexts = {};\n        var keys = getObjectKeys(compactObj.contexts);\n\n        for (var i = 0; i < keys.length; i++) {\n          var ctx = keys[i];\n          var newContext = {};\n          var msgids = getObjectKeys(compactObj.contexts[ctx]);\n\n          for (var j = 0; j < msgids.length; j++) {\n            var msgid = msgids[j];\n            var translations = compactObj.contexts[ctx][msgid];\n\n            var _transformCompactTran = transformCompactTranslate(msgid, translations),\n                _transformCompactTran2 = _slicedToArray(_transformCompactTran, 2),\n                newMsgid = _transformCompactTran2[0],\n                newTranslations = _transformCompactTran2[1];\n\n            newContext[newMsgid] = newTranslations;\n          }\n\n          newContexts[ctx] = newContext;\n        }\n\n        newObj.contexts = newContexts;\n        return newObj;\n      }\n\n      function dedentStr(rawStr) {\n        if (!(typeof rawStr === 'string')) {\n          return rawStr;\n        }\n\n        if (rawStr.indexOf('\\n') === -1) {\n          return rawStr;\n        }\n\n        return __WEBPACK_IMPORTED_MODULE_0_dedent___default()(rawStr);\n      }\n\n      function getPluralFnForTrans(config) {\n        var headers = config.getCurrentLocaleHeaders();\n        var language = headers.language | headers.Language;\n\n        if (language) {\n          return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_plural_forms_dist_minimal__[\"getPluralFunc\"])(language);\n        }\n\n        var pluralStr = getPluralFunc(headers);\n        return makePluralFunc(pluralStr);\n      }\n      /***/\n\n    },\n    /* 2 */\n\n    /***/\n    function (module, __webpack_exports__, __webpack_require__) {\n      \"use strict\";\n      /* harmony export (immutable) */\n\n      __webpack_exports__[\"e\"] = validateLocaleCode;\n      /* harmony export (immutable) */\n\n      __webpack_exports__[\"f\"] = validateLocaleData;\n      /* harmony export (immutable) */\n\n      __webpack_exports__[\"g\"] = validateLocales;\n      /* harmony export (immutable) */\n\n      __webpack_exports__[\"a\"] = validateNgettextMsgid;\n      /* harmony export (immutable) */\n\n      __webpack_exports__[\"b\"] = validateNgettextNumber;\n      /* harmony export (immutable) */\n\n      __webpack_exports__[\"c\"] = validateNgettextPluralForms;\n      /* harmony export (immutable) */\n\n      __webpack_exports__[\"d\"] = validateLang;\n      /* harmony import */\n\n      var __WEBPACK_IMPORTED_MODULE_0_plural_forms_dist_minimal__ = __webpack_require__(0);\n      /* harmony import */\n\n\n      var __WEBPACK_IMPORTED_MODULE_0_plural_forms_dist_minimal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_plural_forms_dist_minimal__);\n\n      function _typeof(obj) {\n        if (typeof Symbol === \"function\" && typeof Symbol.iterator === \"symbol\") {\n          _typeof = function _typeof(obj) {\n            return typeof obj;\n          };\n        } else {\n          _typeof = function _typeof(obj) {\n            return obj && typeof Symbol === \"function\" && obj.constructor === Symbol && obj !== Symbol.prototype ? \"symbol\" : typeof obj;\n          };\n        }\n\n        return _typeof(obj);\n      }\n\n      function validateLocale(locale, availLocales) {\n        if (true) {\n          if (!availLocales[locale]) {\n            throw new Error(\"\\n                    Locale '\".concat(locale, \"' is not found in config.\\n                    useLocales accepts only existing locales. Use addLocale function before.\\n                    Available locales: \").concat(JSON.stringify(availLocales)));\n          }\n        }\n      }\n\n      function validateLocaleCode(locale) {\n        if (true) {\n          if (typeof locale !== 'string') {\n            throw new Error(\"Expected locale code to be a string but recieved \".concat(_typeof(locale), \" insttead\"));\n          }\n        }\n      }\n\n      function validateLocaleData(data) {\n        if (true) {\n          // eslint-disable-next-line\n          var addLocaleDoc = 'https://ttag.js.org/docs/library-api.html#addlocale';\n\n          if (!data) {\n            throw new Error(\"\\n            Locale data should not be empty.\\n            see - \".concat(addLocaleDoc, \"\\n            \"));\n          }\n\n          if (!data.headers) {\n            throw new Error(\"\\n            Locale data should contain headers \\\"\".concat(JSON.stringify(data), \"\\\".\\n            see - \").concat(addLocaleDoc, \"\\n            \"));\n          }\n\n          if (!data.headers['plural-forms'] && !data.headers['Plural-Forms']) {\n            throw new Error(\"\\n            Locale data.headers should contain 'Plural-Forms' attribute \\\"\".concat(JSON.stringify(data), \"\\\".\\n            see - \").concat(addLocaleDoc, \"\\n            \"));\n          }\n\n          if (!data.translations && !data.contexts) {\n            throw new Error(\"\\n            Locale data should contain translations or contexts property \\\"\".concat(JSON.stringify(data), \"\\\".\\n            see - \").concat(addLocaleDoc, \"\\n            \"));\n          }\n\n          if (data.translations && !Object.keys(data.translations).length) {\n            throw new Error(\"\\n            Locale data.translations should have at least 1 key\\\"\".concat(JSON.stringify(data), \"\\\".\\n            see - \").concat(addLocaleDoc, \"\\n            \"));\n          }\n\n          if (data.contexts && !Object.keys(data.contexts).length) {\n            throw new Error(\"\\n            Locale data.contexts should have at least 1 key\\\"\".concat(JSON.stringify(data), \"\\\".\\n            see - \").concat(addLocaleDoc, \"\\n            \"));\n          }\n        }\n      }\n\n      function validateLocales(locales, availLocales) {\n        if (true) {\n          if (!Array.isArray(locales)) {\n            throw new Error('useLocales accepts only array as the first argument');\n          }\n\n          locales.forEach(function (locale) {\n            return validateLocale(locale, availLocales);\n          });\n        }\n      }\n\n      function validateNgettextMsgid(str) {\n        if (true) {\n          var ngettextDoc = 'https://ttag.js.org/docs/ngettext.html';\n\n          if (!(str.hasOwnProperty('_strs') && str.hasOwnProperty('_exprs'))) {\n            throw new Error(\"The first argument for ngettext must be tagged with 'msgid' tag.\\n                see - \".concat(ngettextDoc, \";\\n                \"));\n          }\n        }\n      }\n\n      function validateNgettextNumber(n) {\n        if (true) {\n          var ngettextDoc = 'https://ttag.js.org/docs/ngettext.html';\n\n          if (!(typeof n === 'number')) {\n            throw new Error(\"The last argument to ngettext - '\".concat(n, \"' expected to be a number. Got '\").concat(_typeof(n), \"' instead.\\n                see - \").concat(ngettextDoc));\n          }\n        }\n      }\n\n      function validateNgettextPluralForms(expectedFormsCount, actualFormsCount) {\n        if (true) {\n          if (actualFormsCount !== expectedFormsCount) {\n            throw new Error( // eslint-disable-next-line max-len\n            \"ngettext expects \".concat(expectedFormsCount, \" for the current default locale, but received - \").concat(actualFormsCount, \".\"));\n          }\n        }\n      }\n\n      function validateLang(lang) {\n        if (true) {\n          var langs = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_plural_forms_dist_minimal__[\"getAvailLangs\"])().join(',');\n\n          if (!__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_plural_forms_dist_minimal__[\"hasLang\"])(lang)) {\n            throw new Error(\"Unknown lang code - \".concat(lang, \". Lang should be one of: \").concat(langs, \".\"));\n          }\n        }\n      }\n      /***/\n\n    },\n    /* 3 */\n\n    /***/\n    function (module, __webpack_exports__, __webpack_require__) {\n      \"use strict\";\n      /* harmony export (immutable) */\n\n      __webpack_exports__[\"a\"] = Config;\n      /* harmony import */\n\n      var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(1);\n      /* harmony import */\n\n\n      var __WEBPACK_IMPORTED_MODULE_1__validation__ = __webpack_require__(2);\n      /* harmony import */\n\n\n      var __WEBPACK_IMPORTED_MODULE_2_plural_forms_dist_minimal__ = __webpack_require__(0);\n      /* harmony import */\n\n\n      var __WEBPACK_IMPORTED_MODULE_2_plural_forms_dist_minimal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_plural_forms_dist_minimal__);\n\n      function Config() {\n        var _this = this;\n\n        var config = {\n          locales: {},\n          currentLocales: [],\n          currentLocale: 'en',\n          dedent: true,\n          defaultLang: 'en'\n        };\n\n        this.addLocale = function (locale, localeData) {\n          if (true) __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__validation__[\"e\"\n          /* validateLocaleCode */\n          ])(locale);\n          if (true) __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__validation__[\"f\"\n          /* validateLocaleData */\n          ])(localeData);\n\n          if (localeData.translations) {\n            localeData = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__[\"g\"\n            /* transformTranslateObj */\n            ])(localeData);\n          } else if (localeData.contexts) {\n            localeData = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__[\"h\"\n            /* transformCompactObj */\n            ])(localeData);\n          } else {\n            throw new Error('Invalid locale data format');\n          }\n\n          config.locales[locale] = localeData;\n        };\n\n        this.setCurrentLocale = function (locale) {\n          config.currentLocale = locale;\n        };\n\n        this.setDedent = function (dedent) {\n          config.dedent = dedent;\n        };\n\n        this.setCurrentLocales = function (locales) {\n          if (true) __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__validation__[\"g\"\n          /* validateLocales */\n          ])(locales, _this.getAvailLocales());\n          config.currentLocales = locales;\n        };\n\n        this.getAvailLocales = function () {\n          return config.locales;\n        };\n\n        this.getCurrentLocales = function () {\n          return config.currentLocales;\n        };\n\n        this.getCurrentLocale = function () {\n          return config.currentLocale;\n        };\n\n        this.isDedent = function () {\n          return config.dedent;\n        };\n\n        this.setDefaultLang = function (lang) {\n          config.defaultLang = lang;\n        };\n\n        this.getDefaultPluralFn = function () {\n          return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2_plural_forms_dist_minimal__[\"getPluralFunc\"])(config.defaultLang);\n        };\n\n        this.getDefaultPluralFormsCount = function () {\n          return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2_plural_forms_dist_minimal__[\"getNPlurals\"])(config.defaultLang);\n        };\n\n        this.getCurrentLocaleHeaders = function () {\n          return config.locales[config.currentLocale].headers;\n        };\n      }\n      /***/\n\n    },\n    /* 4 */\n\n    /***/\n    function (module, __webpack_exports__, __webpack_require__) {\n      \"use strict\";\n\n      Object.defineProperty(__webpack_exports__, \"__esModule\", {\n        value: true\n      });\n      /* harmony export (immutable) */\n\n      __webpack_exports__[\"t\"] = t;\n      /* harmony export (immutable) */\n\n      __webpack_exports__[\"jt\"] = jt;\n      /* harmony export (immutable) */\n\n      __webpack_exports__[\"msgid\"] = msgid;\n      /* harmony export (immutable) */\n\n      __webpack_exports__[\"gettext\"] = gettext;\n      /* harmony export (binding) */\n\n      __webpack_require__.d(__webpack_exports__, \"_\", function () {\n        return _;\n      });\n      /* harmony export (immutable) */\n\n\n      __webpack_exports__[\"ngettext\"] = ngettext;\n      /* harmony export (immutable) */\n\n      __webpack_exports__[\"addLocale\"] = addLocale;\n      /* harmony export (immutable) */\n\n      __webpack_exports__[\"useLocale\"] = useLocale;\n      /* harmony export (immutable) */\n\n      __webpack_exports__[\"setDedent\"] = setDedent;\n      /* harmony export (immutable) */\n\n      __webpack_exports__[\"useLocales\"] = useLocales;\n      /* harmony export (immutable) */\n\n      __webpack_exports__[\"setDefaultLang\"] = setDefaultLang;\n      /* harmony export (immutable) */\n\n      __webpack_exports__[\"c\"] = c;\n      /* harmony import */\n\n      var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(1);\n      /* harmony import */\n\n\n      var __WEBPACK_IMPORTED_MODULE_1__validation__ = __webpack_require__(2);\n      /* harmony import */\n\n\n      var __WEBPACK_IMPORTED_MODULE_2__config__ = __webpack_require__(3);\n\n      var conf = new __WEBPACK_IMPORTED_MODULE_2__config__[\"a\"\n      /* default */\n      ]();\n\n      function Context(context) {\n        if (true) {\n          if (typeof context !== 'string') {\n            throw new Error('String type is expected as a first ' + 'argument to c() function.');\n          }\n        }\n\n        this.getContext = function () {\n          return context;\n        };\n      }\n\n      var getTransContext = function getTransContext(obj) {\n        if (obj instanceof Context) {\n          return obj.getContext();\n        }\n\n        return '';\n      };\n\n      function isFuzzy(translationObj) {\n        return translationObj && translationObj.comments && translationObj.comments.flag === 'fuzzy';\n      }\n\n      function hasTranslations(msgstr) {\n        if (!msgstr) return false;\n\n        for (var i = 0; i < msgstr.length; i++) {\n          if (!msgstr[i].length) return false;\n        }\n\n        return true;\n      }\n\n      function findTransObj(locale, str, ctx) {\n        var locales = conf.getAvailLocales();\n        var localeData = locales[locale];\n        if (!localeData) return null; // verbose format\n\n        if (localeData.translations) {\n          var translations = localeData.translations[ctx] || localeData.translations[''];\n          var translation = translations && translations[str];\n\n          if (translation && !isFuzzy(translation) && hasTranslations(translation.msgstr)) {\n            return translation.msgstr;\n          }\n        } // compact format\n\n\n        if (localeData.contexts) {\n          var _translations = localeData.contexts[ctx] || localeData.contexts[''];\n\n          var _translation = _translations && _translations[str];\n\n          if (_translation && hasTranslations(_translation)) {\n            return _translation;\n          }\n        }\n\n        return null;\n      }\n\n      function findTranslation(str, ctx) {\n        var locales = conf.getCurrentLocales();\n\n        if (locales.length) {\n          for (var i = 0; i < locales.length; i++) {\n            var translation = findTransObj(locales[i], str, ctx);\n\n            if (translation) {\n              conf.setCurrentLocale(locales[i]);\n              return translation;\n            }\n          }\n        }\n\n        return findTransObj(conf.getCurrentLocale(), str, ctx);\n      }\n\n      var maybeDedent = function maybeDedent(str) {\n        return conf.isDedent() ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__[\"a\"\n        /* dedentStr */\n        ])(str) : str;\n      };\n\n      function t(strings) {\n        var result = strings;\n\n        if (strings && strings.reduce) {\n          for (var _len = arguments.length, exprs = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {\n            exprs[_key - 1] = arguments[_key];\n          }\n\n          var id = maybeDedent(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__[\"b\"\n          /* getMsgid */\n          ])(strings, exprs));\n          var context = getTransContext(this);\n          var trans = findTranslation(id, context);\n          result = trans ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__[\"c\"\n          /* msgid2Orig */\n          ])(trans[0], exprs) : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__[\"d\"\n          /* buildStr */\n          ])(strings, exprs);\n        }\n\n        return maybeDedent(result);\n      }\n\n      var separator = /(\\${\\s*\\d+\\s*})/g;\n      var slotIdRegexp = /\\${\\s*(\\d+)\\s*}/;\n\n      function jt(strings) {\n        for (var _len2 = arguments.length, exprs = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {\n          exprs[_key2 - 1] = arguments[_key2];\n        }\n\n        if (strings && strings.reduce) {\n          var id = maybeDedent(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__[\"b\"\n          /* getMsgid */\n          ])(strings, exprs));\n          var context = getTransContext(this);\n          var trans = findTranslation(id, context);\n          if (!trans) return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__[\"e\"\n          /* buildArr */\n          ])(strings, exprs); // splits string & capturing group into tokens\n          //\n\n          var translatedTokens = trans[0].split(separator);\n          return translatedTokens.map(function (token) {\n            var slotIdMatch = token.match(slotIdRegexp); // slotIdMatch is not null only when the token is a variable slot (${xx})\n\n            return slotIdMatch ? exprs[+slotIdMatch[1]] : token;\n          });\n        }\n\n        return strings;\n      }\n\n      function msgid(strings) {\n        /* eslint-disable no-new-wrappers */\n        if (strings && strings.reduce) {\n          for (var _len3 = arguments.length, exprs = new Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {\n            exprs[_key3 - 1] = arguments[_key3];\n          }\n\n          var result = new String(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__[\"d\"\n          /* buildStr */\n          ])(strings, exprs));\n          result._strs = strings;\n          result._exprs = exprs;\n          return result;\n        }\n\n        return strings;\n      }\n\n      function gettext(id) {\n        var context = getTransContext(this);\n        var trans = findTranslation(id, context);\n        return trans ? trans[0] : id;\n      }\n\n      var _ = gettext;\n\n      function ngettext() {\n        for (var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {\n          args[_key4] = arguments[_key4];\n        }\n\n        if (true) __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__validation__[\"a\"\n        /* validateNgettextMsgid */\n        ])(args[0]);\n        var id = maybeDedent(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__[\"b\"\n        /* getMsgid */\n        ])(args[0]._strs, args[0]._exprs));\n        var n = args[args.length - 1];\n        if (true) __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__validation__[\"b\"\n        /* validateNgettextNumber */\n        ])(n);\n        var forms = args.slice(1, -1);\n        forms.unshift(args[0].toString());\n\n        if (true) {\n          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__validation__[\"c\"\n          /* validateNgettextPluralForms */\n          ])(conf.getDefaultPluralFormsCount(), forms.length);\n        }\n\n        var trans = findTranslation(id, getTransContext(this));\n\n        if (trans) {\n          var _pluralFn = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__[\"f\"\n          /* getPluralFnForTrans */\n          ])(conf);\n\n          return maybeDedent(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__[\"c\"\n          /* msgid2Orig */\n          ])(_pluralFn(n, trans), args[0]._exprs));\n        }\n\n        var pluralFn = conf.getDefaultPluralFn();\n        return maybeDedent(pluralFn(n, forms));\n      }\n\n      function addLocale(locale, data) {\n        conf.addLocale(locale, data);\n      }\n\n      function useLocale(locale) {\n        conf.setCurrentLocale(locale);\n      }\n\n      function setDedent(value) {\n        conf.setDedent(Boolean(value));\n      }\n\n      function useLocales(locales) {\n        conf.setCurrentLocales(locales);\n      }\n\n      function setDefaultLang(lang) {\n        if (true) __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__validation__[\"d\"\n        /* validateLang */\n        ])(lang);\n        conf.setDefaultLang(lang);\n      }\n\n      function c(context) {\n        var ctx = new Context(context);\n        return {\n          t: t.bind(ctx),\n          jt: jt.bind(ctx),\n          gettext: gettext.bind(ctx),\n          ngettext: ngettext.bind(ctx)\n        };\n      }\n      /***/\n\n    },\n    /* 5 */\n\n    /***/\n    function (module, exports, __webpack_require__) {\n      \"use strict\";\n\n      function dedent(strings) {\n        var raw = void 0;\n\n        if (typeof strings === \"string\") {\n          // dedent can be used as a plain function\n          raw = [strings];\n        } else {\n          raw = strings.raw;\n        } // first, perform interpolation\n\n\n        var result = \"\";\n\n        for (var i = 0; i < raw.length; i++) {\n          result += raw[i]. // join lines when there is a suppressed newline\n          replace(/\\\\\\n[ \\t]*/g, \"\"). // handle escaped backticks\n          replace(/\\\\`/g, \"`\");\n\n          if (i < (arguments.length <= 1 ? 0 : arguments.length - 1)) {\n            result += arguments.length <= i + 1 ? undefined : arguments[i + 1];\n          }\n        } // now strip indentation\n\n\n        var lines = result.split(\"\\n\");\n        var mindent = null;\n        lines.forEach(function (l) {\n          var m = l.match(/^(\\s+)\\S+/);\n\n          if (m) {\n            var indent = m[1].length;\n\n            if (!mindent) {\n              // this is the first indented line\n              mindent = indent;\n            } else {\n              mindent = Math.min(mindent, indent);\n            }\n          }\n        });\n\n        if (mindent !== null) {\n          result = lines.map(function (l) {\n            return l[0] === \" \" ? l.slice(mindent) : l;\n          }).join(\"\\n\");\n        } // dedent eats leading and trailing whitespace too\n\n\n        result = result.trim(); // handle escaped newlines at the end to ensure they don't get stripped too\n\n        return result.replace(/\\\\n/g, \"\\n\");\n      }\n\n      if (true) {\n        module.exports = dedent;\n      }\n      /***/\n\n    }])\n  );\n});\n\n//# sourceURL=webpack:///./node_modules/ttag/dist/ttag.js?");
+(function webpackUniversalModuleDefinition(root, factory) {
+  if (true) module.exports = factory();else { var i, a; }
+})(this, function () {
+  return (
+    /******/
+    function (modules) {
+      // webpackBootstrap
+
+      /******/
+      // The module cache
+
+      /******/
+      var installedModules = {};
+      /******/
+
+      /******/
+      // The require function
+
+      /******/
+
+      function __webpack_require__(moduleId) {
+        /******/
+
+        /******/
+        // Check if module is in cache
+
+        /******/
+        if (installedModules[moduleId]) {
+          /******/
+          return installedModules[moduleId].exports;
+          /******/
+        }
+        /******/
+        // Create a new module (and put it into the cache)
+
+        /******/
+
+
+        var module = installedModules[moduleId] = {
+          /******/
+          i: moduleId,
+
+          /******/
+          l: false,
+
+          /******/
+          exports: {}
+          /******/
+
+        };
+        /******/
+
+        /******/
+        // Execute the module function
+
+        /******/
+
+        modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+        /******/
+
+        /******/
+        // Flag the module as loaded
+
+        /******/
+
+        module.l = true;
+        /******/
+
+        /******/
+        // Return the exports of the module
+
+        /******/
+
+        return module.exports;
+        /******/
+      }
+      /******/
+
+      /******/
+
+      /******/
+      // expose the modules object (__webpack_modules__)
+
+      /******/
+
+
+      __webpack_require__.m = modules;
+      /******/
+
+      /******/
+      // expose the module cache
+
+      /******/
+
+      __webpack_require__.c = installedModules;
+      /******/
+
+      /******/
+      // identity function for calling harmony imports with the correct context
+
+      /******/
+
+      __webpack_require__.i = function (value) {
+        return value;
+      };
+      /******/
+
+      /******/
+      // define getter function for harmony exports
+
+      /******/
+
+
+      __webpack_require__.d = function (exports, name, getter) {
+        /******/
+        if (!__webpack_require__.o(exports, name)) {
+          /******/
+          Object.defineProperty(exports, name, {
+            /******/
+            configurable: false,
+
+            /******/
+            enumerable: true,
+
+            /******/
+            get: getter
+            /******/
+
+          });
+          /******/
+        }
+        /******/
+
+      };
+      /******/
+
+      /******/
+      // getDefaultExport function for compatibility with non-harmony modules
+
+      /******/
+
+
+      __webpack_require__.n = function (module) {
+        /******/
+        var getter = module && module.__esModule ?
+        /******/
+        function getDefault() {
+          return module['default'];
+        } :
+        /******/
+        function getModuleExports() {
+          return module;
+        };
+        /******/
+
+        __webpack_require__.d(getter, 'a', getter);
+        /******/
+
+
+        return getter;
+        /******/
+      };
+      /******/
+
+      /******/
+      // Object.prototype.hasOwnProperty.call
+
+      /******/
+
+
+      __webpack_require__.o = function (object, property) {
+        return Object.prototype.hasOwnProperty.call(object, property);
+      };
+      /******/
+
+      /******/
+      // __webpack_public_path__
+
+      /******/
+
+
+      __webpack_require__.p = "";
+      /******/
+
+      /******/
+      // Load entry module and return exports
+
+      /******/
+
+      return __webpack_require__(__webpack_require__.s = 4);
+      /******/
+    }(
+    /************************************************************************/
+
+    /******/
+    [
+    /* 0 */
+
+    /***/
+    function (module, exports, __webpack_require__) {
+      "use strict";
+
+      function pluralFnBody(n) {
+        return "return args[+ (" + n + ")];";
+      }
+
+      Object.defineProperty(exports, "__esModule", {
+        value: !0
+      });
+      var localeRegExp = /(\w+)[-_].*/;
+
+      function tryGetLangData(n, a) {
+        if (a[n]) return a[n];
+        var t = n.match(localeRegExp);
+        if (!t) throw new Error("Can't find lang or lcale with code " + n);
+        return a[t[1]];
+      }
+
+      var fnCache = {};
+
+      function createPluralFunc(n) {
+        var a = fnCache[n];
+        return a || (a = new Function("n", "args", pluralFnBody(n)), fnCache[n] = a), a;
+      }
+
+      var DATA = {
+        ach: "2;n>1",
+        af: "2;n!=1",
+        ak: "2;n>1",
+        am: "2;n>1",
+        an: "2;n!=1",
+        ar: "6;n==0?0:n==1?1:n==2?2:n%100>=3&&n%100<=10?3:n%100>=11?4:5",
+        arn: "2;n>1",
+        ast: "2;n!=1",
+        ay: "1;0",
+        az: "2;n!=1",
+        be: "3;n%10==1&&n%100!=11?0:n%10>=2&&n%10<=4&&(n%100<10||n%100>=20)?1:2",
+        bg: "2;n!=1",
+        bn: "2;n!=1",
+        bo: "1;0",
+        br: "2;n>1",
+        brx: "2;n!=1",
+        bs: "3;n%10==1&&n%100!=11?0:n%10>=2&&n%10<=4&&(n%100<10||n%100>=20)?1:2",
+        ca: "2;n!=1",
+        cgg: "1;0",
+        cs: "3;n==1?0:(n>=2&&n<=4)?1:2",
+        csb: "3;n==1?0:n%10>=2&&n%10<=4&&(n%100<10||n%100>=20)?1:2",
+        cy: "4;n==1?0:n==2?1:(n!=8&&n!=11)?2:3",
+        da: "2;n!=1",
+        de: "2;n!=1",
+        doi: "2;n!=1",
+        dz: "1;0",
+        el: "2;n!=1",
+        en: "2;n!=1",
+        eo: "2;n!=1",
+        es: "2;n!=1",
+        et: "2;n!=1",
+        eu: "2;n!=1",
+        fa: "1;0",
+        ff: "2;n!=1",
+        fi: "2;n!=1",
+        fil: "2;n>1",
+        fo: "2;n!=1",
+        fr: "2;n>1",
+        fur: "2;n!=1",
+        fy: "2;n!=1",
+        ga: "5;n==1?0:n==2?1:n<7?2:n<11?3:4",
+        gd: "4;(n==1||n==11)?0:(n==2||n==12)?1:(n>2&&n<20)?2:3",
+        gl: "2;n!=1",
+        gu: "2;n!=1",
+        gun: "2;n>1",
+        ha: "2;n!=1",
+        he: "2;n!=1",
+        hi: "2;n!=1",
+        hne: "2;n!=1",
+        hr: "3;n%10==1&&n%100!=11?0:n%10>=2&&n%10<=4&&(n%100<10||n%100>=20)?1:2",
+        hu: "2;n!=1",
+        hy: "2;n!=1",
+        id: "1;0",
+        is: "2;n%10!=1||n%100==11",
+        it: "2;n!=1",
+        ja: "1;0",
+        jbo: "1;0",
+        jv: "2;n!==0",
+        ka: "1;0",
+        kk: "1;0",
+        km: "1;0",
+        kn: "2;n!=1",
+        ko: "1;0",
+        ku: "2;n!=1",
+        kw: "4;n==1?0:n==2?1:n==3?2:3",
+        ky: "1;0",
+        lb: "2;n!=1",
+        ln: "2;n>1",
+        lo: "1;0",
+        lt: "3;n%10==1&&n%100!=11?0:n%10>=2&&(n%100<10||n%100>=20)?1:2",
+        lv: "3;n%10==1&&n%100!=11?0:n!=0?1:2",
+        mai: "2;n!=1",
+        mfe: "2;n>1",
+        mg: "2;n>1",
+        mi: "2;n>1",
+        mk: "2;n==1||n%10==1?0:1",
+        ml: "2;n!=1",
+        mn: "2;n!=1",
+        mni: "2;n!=1",
+        mnk: "3;n==0?0:n==1?1:2",
+        mr: "2;n!=1",
+        ms: "1;0",
+        mt: "4;n==1?0:n==0||(n%100>1&&n%100<11)?1:(n%100>10&&n%100<20)?2:3",
+        my: "1;0",
+        nah: "2;n!=1",
+        nap: "2;n!=1",
+        nb: "2;n!=1",
+        ne: "2;n!=1",
+        nl: "2;n!=1",
+        nn: "2;n!=1",
+        no: "2;n!=1",
+        nso: "2;n!=1",
+        oc: "2;n>1",
+        or: "2;n!=1",
+        pa: "2;n!=1",
+        pap: "2;n!=1",
+        pl: "3;n==1?0:n%10>=2&&n%10<=4&&(n%100<10||n%100>=20)?1:2",
+        pms: "2;n!=1",
+        ps: "2;n!=1",
+        pt: "2;n!=1",
+        rm: "2;n!=1",
+        ro: "3;n==1?0:(n==0||(n%100>0&&n%100<20))?1:2",
+        ru: "3;n%10==1&&n%100!=11?0:n%10>=2&&n%10<=4&&(n%100<10||n%100>=20)?1:2",
+        rw: "2;n!=1",
+        sah: "1;0",
+        sat: "2;n!=1",
+        sco: "2;n!=1",
+        sd: "2;n!=1",
+        se: "2;n!=1",
+        si: "2;n!=1",
+        sk: "3;n==1?0:(n>=2&&n<=4)?1:2",
+        sl: "4;n%100==1?1:n%100==2?2:n%100==3||n%100==4?3:0",
+        so: "2;n!=1",
+        son: "2;n!=1",
+        sq: "2;n!=1",
+        sr: "3;n%10==1&&n%100!=11?0:n%10>=2&&n%10<=4&&(n%100<10||n%100>=20)?1:2",
+        su: "1;0",
+        sv: "2;n!=1",
+        sw: "2;n!=1",
+        ta: "2;n!=1",
+        te: "2;n!=1",
+        tg: "2;n>1",
+        th: "1;0",
+        ti: "2;n>1",
+        tk: "2;n!=1",
+        tr: "2;n>1",
+        tt: "1;0",
+        ug: "1;0",
+        uk: "3;n%10==1&&n%100!=11?0:n%10>=2&&n%10<=4&&(n%100<10||n%100>=20)?1:2",
+        ur: "2;n!=1",
+        uz: "2;n>1",
+        vi: "1;0",
+        wa: "2;n>1",
+        wo: "1;0",
+        yo: "2;n!=1",
+        zh: "1;0"
+      };
+
+      function getFormula(n) {
+        return tryGetLangData(n, DATA).split(";")[1];
+      }
+
+      function getNPlurals(n) {
+        var a = tryGetLangData(n, DATA);
+        return parseInt(a.split(";")[0], 10);
+      }
+
+      function getPluralFunc(n) {
+        return createPluralFunc(getFormula(n));
+      }
+
+      function hasLang(n) {
+        try {
+          return tryGetLangData(n, DATA), !0;
+        } catch (n) {
+          return !1;
+        }
+      }
+
+      function getAvailLangs() {
+        return Object.keys(DATA);
+      }
+
+      exports.getFormula = getFormula, exports.getNPlurals = getNPlurals, exports.getPluralFunc = getPluralFunc, exports.hasLang = hasLang, exports.getAvailLangs = getAvailLangs;
+      /***/
+    },
+    /* 1 */
+
+    /***/
+    function (module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+      /* harmony export (binding) */
+
+      __webpack_require__.d(__webpack_exports__, "b", function () {
+        return getMsgid;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "c", function () {
+        return msgid2Orig;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "d", function () {
+        return buildStr;
+      });
+      /* harmony export (binding) */
+
+
+      __webpack_require__.d(__webpack_exports__, "e", function () {
+        return buildArr;
+      });
+      /* unused harmony export makePluralFunc */
+
+      /* unused harmony export getPluralFunc */
+
+      /* harmony export (immutable) */
+
+
+      __webpack_exports__["g"] = transformTranslateObj;
+      /* harmony export (immutable) */
+
+      __webpack_exports__["h"] = transformCompactObj;
+      /* harmony export (immutable) */
+
+      __webpack_exports__["a"] = dedentStr;
+      /* harmony export (immutable) */
+
+      __webpack_exports__["f"] = getPluralFnForTrans;
+      /* harmony import */
+
+      var __WEBPACK_IMPORTED_MODULE_0_dedent__ = __webpack_require__(5);
+      /* harmony import */
+
+
+      var __WEBPACK_IMPORTED_MODULE_0_dedent___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_dedent__);
+      /* harmony import */
+
+
+      var __WEBPACK_IMPORTED_MODULE_1_plural_forms_dist_minimal__ = __webpack_require__(0);
+      /* harmony import */
+
+
+      var __WEBPACK_IMPORTED_MODULE_1_plural_forms_dist_minimal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_plural_forms_dist_minimal__);
+
+      function _slicedToArray(arr, i) {
+        return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
+      }
+
+      function _nonIterableRest() {
+        throw new TypeError("Invalid attempt to destructure non-iterable instance");
+      }
+
+      function _iterableToArrayLimit(arr, i) {
+        var _arr = [];
+        var _n = true;
+        var _d = false;
+        var _e = undefined;
+
+        try {
+          for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+            _arr.push(_s.value);
+
+            if (i && _arr.length === i) break;
+          }
+        } catch (err) {
+          _d = true;
+          _e = err;
+        } finally {
+          try {
+            if (!_n && _i["return"] != null) _i["return"]();
+          } finally {
+            if (_d) throw _e;
+          }
+        }
+
+        return _arr;
+      }
+
+      function _arrayWithHoles(arr) {
+        if (Array.isArray(arr)) return arr;
+      }
+
+      var getMsgid = function getMsgid(str, exprs) {
+        return str.reduce(function (s, l, i) {
+          return s + l + (exprs[i] !== undefined && "${".concat(i, "}") || '');
+        }, '');
+      };
+
+      var removeSpaces = function removeSpaces(str) {
+        return str.replace(/\s/g, '');
+      };
+
+      var mem = {};
+
+      var memoize1 = function memoize1(f) {
+        return function (arg) {
+          if (mem[arg]) {
+            return mem[arg];
+          }
+
+          mem[arg] = f(arg);
+          return mem[arg];
+        };
+      };
+
+      var reg = function reg(i) {
+        return new RegExp("\\$\\{(?:[\\s]+?|\\s?)".concat(i, "(?:[\\s]+?|\\s?)}"));
+      };
+
+      var memReg = memoize1(reg);
+
+      var msgid2Orig = function msgid2Orig(id, exprs) {
+        return exprs.reduce(function (r, expr, i) {
+          return r.replace(memReg(i), expr);
+        }, id);
+      };
+
+      var buildStr = function buildStr(strs, exprs) {
+        return strs.reduce(function (r, s, i) {
+          return r + s + (exprs[i] !== undefined ? exprs[i] : '');
+        }, '');
+      };
+
+      var buildArr = function buildArr(strs, exprs) {
+        return strs.reduce(function (r, s, i) {
+          return exprs[i] !== undefined ? r.concat(s, exprs[i]) : r.concat(s);
+        }, []);
+      };
+
+      function pluralFnBody(pluralStr) {
+        return "return args[+ (".concat(pluralStr, ")];");
+      }
+
+      var fnCache = {};
+
+      function makePluralFunc(pluralStr) {
+        /* eslint-disable no-new-func */
+        var fn = fnCache[pluralStr];
+
+        if (!fn) {
+          fn = new Function('n', 'args', pluralFnBody(pluralStr));
+          fnCache[pluralStr] = fn;
+        }
+
+        return fn;
+      }
+
+      var pluralRegex = /\splural ?=?([\s\S]*);?/;
+
+      function getPluralFunc(headers) {
+        var pluralFn = pluralRegex.exec(headers['plural-forms'])[1];
+
+        if (pluralFn[pluralFn.length - 1] === ';') {
+          pluralFn = pluralFn.slice(0, -1);
+        }
+
+        return pluralFn;
+      }
+
+      var variableREG = /\$\{\s*([.\w+\[\]])*\s*\}/g;
+
+      function getObjectKeys(obj) {
+        var keys = [];
+
+        for (var key in obj) {
+          // eslint-disable-line no-restricted-syntax
+          if (obj.hasOwnProperty(key)) {
+            keys.push(key);
+          }
+        }
+
+        return keys;
+      }
+
+      function replaceVariables(str, obj) {
+        return str.replace(variableREG, function (variable) {
+          return "${".concat(obj[removeSpaces(variable)], "}");
+        });
+      }
+
+      function getVariablesMap(msgid) {
+        var variableNumberMap = {};
+        var variables = msgid.match(variableREG);
+        if (!variables) return null;
+
+        for (var i = 0; i < variables.length; i++) {
+          variableNumberMap[removeSpaces(variables[i])] = i;
+        }
+
+        return variableNumberMap;
+      }
+
+      function transformTranslate(translate) {
+        var variableNumberMap = getVariablesMap(translate.msgid);
+
+        if (!variableNumberMap) {
+          return translate;
+        }
+
+        var msgid = replaceVariables(translate.msgid, variableNumberMap);
+        var newTranslate = {
+          msgid: msgid
+        };
+
+        if (translate.msgid_plural) {
+          newTranslate.msgid_plural = replaceVariables(translate.msgid_plural, variableNumberMap);
+        }
+
+        newTranslate.msgstr = [];
+        var transStrs = translate.msgstr;
+
+        for (var i = 0; i < transStrs.length; i++) {
+          newTranslate.msgstr.push(replaceVariables(transStrs[i], variableNumberMap));
+        }
+
+        newTranslate.comments = translate.comments;
+        return newTranslate;
+      }
+
+      function transformTranslateObj(translateObj) {
+        var newTranslations = {};
+        var transKeys = getObjectKeys(translateObj.translations);
+
+        for (var i = 0; i < transKeys.length; i++) {
+          var key = transKeys[i];
+          var translation = translateObj.translations[key];
+          var newTranslation = {};
+          var msgids = getObjectKeys(translation);
+
+          for (var j = 0; j < msgids.length; j++) {
+            var msgid = msgids[j];
+            var newTranslate = transformTranslate(translation[msgid]);
+            newTranslation[newTranslate.msgid] = newTranslate;
+          }
+
+          newTranslations[key] = newTranslation;
+        }
+
+        translateObj.translations = newTranslations;
+        return translateObj;
+      }
+
+      function transformCompactTranslate(msgid, translations) {
+        var variableNumberMap = getVariablesMap(msgid);
+
+        if (!variableNumberMap) {
+          return [msgid, translations];
+        }
+
+        var newMsgid = replaceVariables(msgid, variableNumberMap);
+        var newTranslations = translations.map(function (trans) {
+          return replaceVariables(trans, variableNumberMap);
+        });
+        return [newMsgid, newTranslations];
+      }
+
+      function transformCompactObj(compactObj) {
+        var newObj = {
+          headers: compactObj.headers
+        };
+        var newContexts = {};
+        var keys = getObjectKeys(compactObj.contexts);
+
+        for (var i = 0; i < keys.length; i++) {
+          var ctx = keys[i];
+          var newContext = {};
+          var msgids = getObjectKeys(compactObj.contexts[ctx]);
+
+          for (var j = 0; j < msgids.length; j++) {
+            var msgid = msgids[j];
+            var translations = compactObj.contexts[ctx][msgid];
+
+            var _transformCompactTran = transformCompactTranslate(msgid, translations),
+                _transformCompactTran2 = _slicedToArray(_transformCompactTran, 2),
+                newMsgid = _transformCompactTran2[0],
+                newTranslations = _transformCompactTran2[1];
+
+            newContext[newMsgid] = newTranslations;
+          }
+
+          newContexts[ctx] = newContext;
+        }
+
+        newObj.contexts = newContexts;
+        return newObj;
+      }
+
+      function dedentStr(rawStr) {
+        if (!(typeof rawStr === 'string')) {
+          return rawStr;
+        }
+
+        if (rawStr.indexOf('\n') === -1) {
+          return rawStr;
+        }
+
+        return __WEBPACK_IMPORTED_MODULE_0_dedent___default()(rawStr);
+      }
+
+      function getPluralFnForTrans(config) {
+        var headers = config.getCurrentLocaleHeaders();
+        var language = headers.language | headers.Language;
+
+        if (language) {
+          return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_plural_forms_dist_minimal__["getPluralFunc"])(language);
+        }
+
+        var pluralStr = getPluralFunc(headers);
+        return makePluralFunc(pluralStr);
+      }
+      /***/
+
+    },
+    /* 2 */
+
+    /***/
+    function (module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+      /* harmony export (immutable) */
+
+      __webpack_exports__["e"] = validateLocaleCode;
+      /* harmony export (immutable) */
+
+      __webpack_exports__["f"] = validateLocaleData;
+      /* harmony export (immutable) */
+
+      __webpack_exports__["g"] = validateLocales;
+      /* harmony export (immutable) */
+
+      __webpack_exports__["a"] = validateNgettextMsgid;
+      /* harmony export (immutable) */
+
+      __webpack_exports__["b"] = validateNgettextNumber;
+      /* harmony export (immutable) */
+
+      __webpack_exports__["c"] = validateNgettextPluralForms;
+      /* harmony export (immutable) */
+
+      __webpack_exports__["d"] = validateLang;
+      /* harmony import */
+
+      var __WEBPACK_IMPORTED_MODULE_0_plural_forms_dist_minimal__ = __webpack_require__(0);
+      /* harmony import */
+
+
+      var __WEBPACK_IMPORTED_MODULE_0_plural_forms_dist_minimal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_plural_forms_dist_minimal__);
+
+      function _typeof(obj) {
+        if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+          _typeof = function _typeof(obj) {
+            return typeof obj;
+          };
+        } else {
+          _typeof = function _typeof(obj) {
+            return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+          };
+        }
+
+        return _typeof(obj);
+      }
+
+      function validateLocale(locale, availLocales) {
+        if (true) {
+          if (!availLocales[locale]) {
+            throw new Error("\n                    Locale '".concat(locale, "' is not found in config.\n                    useLocales accepts only existing locales. Use addLocale function before.\n                    Available locales: ").concat(JSON.stringify(availLocales)));
+          }
+        }
+      }
+
+      function validateLocaleCode(locale) {
+        if (true) {
+          if (typeof locale !== 'string') {
+            throw new Error("Expected locale code to be a string but recieved ".concat(_typeof(locale), " insttead"));
+          }
+        }
+      }
+
+      function validateLocaleData(data) {
+        if (true) {
+          // eslint-disable-next-line
+          var addLocaleDoc = 'https://ttag.js.org/docs/library-api.html#addlocale';
+
+          if (!data) {
+            throw new Error("\n            Locale data should not be empty.\n            see - ".concat(addLocaleDoc, "\n            "));
+          }
+
+          if (!data.headers) {
+            throw new Error("\n            Locale data should contain headers \"".concat(JSON.stringify(data), "\".\n            see - ").concat(addLocaleDoc, "\n            "));
+          }
+
+          if (!data.headers['plural-forms'] && !data.headers['Plural-Forms']) {
+            throw new Error("\n            Locale data.headers should contain 'Plural-Forms' attribute \"".concat(JSON.stringify(data), "\".\n            see - ").concat(addLocaleDoc, "\n            "));
+          }
+
+          if (!data.translations && !data.contexts) {
+            throw new Error("\n            Locale data should contain translations or contexts property \"".concat(JSON.stringify(data), "\".\n            see - ").concat(addLocaleDoc, "\n            "));
+          }
+
+          if (data.translations && !Object.keys(data.translations).length) {
+            throw new Error("\n            Locale data.translations should have at least 1 key\"".concat(JSON.stringify(data), "\".\n            see - ").concat(addLocaleDoc, "\n            "));
+          }
+
+          if (data.contexts && !Object.keys(data.contexts).length) {
+            throw new Error("\n            Locale data.contexts should have at least 1 key\"".concat(JSON.stringify(data), "\".\n            see - ").concat(addLocaleDoc, "\n            "));
+          }
+        }
+      }
+
+      function validateLocales(locales, availLocales) {
+        if (true) {
+          if (!Array.isArray(locales)) {
+            throw new Error('useLocales accepts only array as the first argument');
+          }
+
+          locales.forEach(function (locale) {
+            return validateLocale(locale, availLocales);
+          });
+        }
+      }
+
+      function validateNgettextMsgid(str) {
+        if (true) {
+          var ngettextDoc = 'https://ttag.js.org/docs/ngettext.html';
+
+          if (!(str.hasOwnProperty('_strs') && str.hasOwnProperty('_exprs'))) {
+            throw new Error("The first argument for ngettext must be tagged with 'msgid' tag.\n                see - ".concat(ngettextDoc, ";\n                "));
+          }
+        }
+      }
+
+      function validateNgettextNumber(n) {
+        if (true) {
+          var ngettextDoc = 'https://ttag.js.org/docs/ngettext.html';
+
+          if (!(typeof n === 'number')) {
+            throw new Error("The last argument to ngettext - '".concat(n, "' expected to be a number. Got '").concat(_typeof(n), "' instead.\n                see - ").concat(ngettextDoc));
+          }
+        }
+      }
+
+      function validateNgettextPluralForms(expectedFormsCount, actualFormsCount) {
+        if (true) {
+          if (actualFormsCount !== expectedFormsCount) {
+            throw new Error( // eslint-disable-next-line max-len
+            "ngettext expects ".concat(expectedFormsCount, " for the current default locale, but received - ").concat(actualFormsCount, "."));
+          }
+        }
+      }
+
+      function validateLang(lang) {
+        if (true) {
+          var langs = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_plural_forms_dist_minimal__["getAvailLangs"])().join(',');
+
+          if (!__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0_plural_forms_dist_minimal__["hasLang"])(lang)) {
+            throw new Error("Unknown lang code - ".concat(lang, ". Lang should be one of: ").concat(langs, "."));
+          }
+        }
+      }
+      /***/
+
+    },
+    /* 3 */
+
+    /***/
+    function (module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+      /* harmony export (immutable) */
+
+      __webpack_exports__["a"] = Config;
+      /* harmony import */
+
+      var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(1);
+      /* harmony import */
+
+
+      var __WEBPACK_IMPORTED_MODULE_1__validation__ = __webpack_require__(2);
+      /* harmony import */
+
+
+      var __WEBPACK_IMPORTED_MODULE_2_plural_forms_dist_minimal__ = __webpack_require__(0);
+      /* harmony import */
+
+
+      var __WEBPACK_IMPORTED_MODULE_2_plural_forms_dist_minimal___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_plural_forms_dist_minimal__);
+
+      function Config() {
+        var _this = this;
+
+        var config = {
+          locales: {},
+          currentLocales: [],
+          currentLocale: 'en',
+          dedent: true,
+          defaultLang: 'en'
+        };
+
+        this.addLocale = function (locale, localeData) {
+          if (true) __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__validation__["e"
+          /* validateLocaleCode */
+          ])(locale);
+          if (true) __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__validation__["f"
+          /* validateLocaleData */
+          ])(localeData);
+
+          if (localeData.translations) {
+            localeData = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["g"
+            /* transformTranslateObj */
+            ])(localeData);
+          } else if (localeData.contexts) {
+            localeData = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["h"
+            /* transformCompactObj */
+            ])(localeData);
+          } else {
+            throw new Error('Invalid locale data format');
+          }
+
+          config.locales[locale] = localeData;
+        };
+
+        this.setCurrentLocale = function (locale) {
+          config.currentLocale = locale;
+        };
+
+        this.setDedent = function (dedent) {
+          config.dedent = dedent;
+        };
+
+        this.setCurrentLocales = function (locales) {
+          if (true) __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__validation__["g"
+          /* validateLocales */
+          ])(locales, _this.getAvailLocales());
+          config.currentLocales = locales;
+        };
+
+        this.getAvailLocales = function () {
+          return config.locales;
+        };
+
+        this.getCurrentLocales = function () {
+          return config.currentLocales;
+        };
+
+        this.getCurrentLocale = function () {
+          return config.currentLocale;
+        };
+
+        this.isDedent = function () {
+          return config.dedent;
+        };
+
+        this.setDefaultLang = function (lang) {
+          config.defaultLang = lang;
+        };
+
+        this.getDefaultPluralFn = function () {
+          return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2_plural_forms_dist_minimal__["getPluralFunc"])(config.defaultLang);
+        };
+
+        this.getDefaultPluralFormsCount = function () {
+          return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_2_plural_forms_dist_minimal__["getNPlurals"])(config.defaultLang);
+        };
+
+        this.getCurrentLocaleHeaders = function () {
+          return config.locales[config.currentLocale].headers;
+        };
+      }
+      /***/
+
+    },
+    /* 4 */
+
+    /***/
+    function (module, __webpack_exports__, __webpack_require__) {
+      "use strict";
+
+      Object.defineProperty(__webpack_exports__, "__esModule", {
+        value: true
+      });
+      /* harmony export (immutable) */
+
+      __webpack_exports__["t"] = t;
+      /* harmony export (immutable) */
+
+      __webpack_exports__["jt"] = jt;
+      /* harmony export (immutable) */
+
+      __webpack_exports__["msgid"] = msgid;
+      /* harmony export (immutable) */
+
+      __webpack_exports__["gettext"] = gettext;
+      /* harmony export (binding) */
+
+      __webpack_require__.d(__webpack_exports__, "_", function () {
+        return _;
+      });
+      /* harmony export (immutable) */
+
+
+      __webpack_exports__["ngettext"] = ngettext;
+      /* harmony export (immutable) */
+
+      __webpack_exports__["addLocale"] = addLocale;
+      /* harmony export (immutable) */
+
+      __webpack_exports__["useLocale"] = useLocale;
+      /* harmony export (immutable) */
+
+      __webpack_exports__["setDedent"] = setDedent;
+      /* harmony export (immutable) */
+
+      __webpack_exports__["useLocales"] = useLocales;
+      /* harmony export (immutable) */
+
+      __webpack_exports__["setDefaultLang"] = setDefaultLang;
+      /* harmony export (immutable) */
+
+      __webpack_exports__["c"] = c;
+      /* harmony import */
+
+      var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(1);
+      /* harmony import */
+
+
+      var __WEBPACK_IMPORTED_MODULE_1__validation__ = __webpack_require__(2);
+      /* harmony import */
+
+
+      var __WEBPACK_IMPORTED_MODULE_2__config__ = __webpack_require__(3);
+
+      var conf = new __WEBPACK_IMPORTED_MODULE_2__config__["a"
+      /* default */
+      ]();
+
+      function Context(context) {
+        if (true) {
+          if (typeof context !== 'string') {
+            throw new Error('String type is expected as a first ' + 'argument to c() function.');
+          }
+        }
+
+        this.getContext = function () {
+          return context;
+        };
+      }
+
+      var getTransContext = function getTransContext(obj) {
+        if (obj instanceof Context) {
+          return obj.getContext();
+        }
+
+        return '';
+      };
+
+      function isFuzzy(translationObj) {
+        return translationObj && translationObj.comments && translationObj.comments.flag === 'fuzzy';
+      }
+
+      function hasTranslations(msgstr) {
+        if (!msgstr) return false;
+
+        for (var i = 0; i < msgstr.length; i++) {
+          if (!msgstr[i].length) return false;
+        }
+
+        return true;
+      }
+
+      function findTransObj(locale, str, ctx) {
+        var locales = conf.getAvailLocales();
+        var localeData = locales[locale];
+        if (!localeData) return null; // verbose format
+
+        if (localeData.translations) {
+          var translations = localeData.translations[ctx] || localeData.translations[''];
+          var translation = translations && translations[str];
+
+          if (translation && !isFuzzy(translation) && hasTranslations(translation.msgstr)) {
+            return translation.msgstr;
+          }
+        } // compact format
+
+
+        if (localeData.contexts) {
+          var _translations = localeData.contexts[ctx] || localeData.contexts[''];
+
+          var _translation = _translations && _translations[str];
+
+          if (_translation && hasTranslations(_translation)) {
+            return _translation;
+          }
+        }
+
+        return null;
+      }
+
+      function findTranslation(str, ctx) {
+        var locales = conf.getCurrentLocales();
+
+        if (locales.length) {
+          for (var i = 0; i < locales.length; i++) {
+            var translation = findTransObj(locales[i], str, ctx);
+
+            if (translation) {
+              conf.setCurrentLocale(locales[i]);
+              return translation;
+            }
+          }
+        }
+
+        return findTransObj(conf.getCurrentLocale(), str, ctx);
+      }
+
+      var maybeDedent = function maybeDedent(str) {
+        return conf.isDedent() ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["a"
+        /* dedentStr */
+        ])(str) : str;
+      };
+
+      function t(strings) {
+        var result = strings;
+
+        if (strings && strings.reduce) {
+          for (var _len = arguments.length, exprs = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+            exprs[_key - 1] = arguments[_key];
+          }
+
+          var id = maybeDedent(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["b"
+          /* getMsgid */
+          ])(strings, exprs));
+          var context = getTransContext(this);
+          var trans = findTranslation(id, context);
+          result = trans ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["c"
+          /* msgid2Orig */
+          ])(trans[0], exprs) : __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["d"
+          /* buildStr */
+          ])(strings, exprs);
+        }
+
+        return maybeDedent(result);
+      }
+
+      var separator = /(\${\s*\d+\s*})/g;
+      var slotIdRegexp = /\${\s*(\d+)\s*}/;
+
+      function jt(strings) {
+        for (var _len2 = arguments.length, exprs = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+          exprs[_key2 - 1] = arguments[_key2];
+        }
+
+        if (strings && strings.reduce) {
+          var id = maybeDedent(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["b"
+          /* getMsgid */
+          ])(strings, exprs));
+          var context = getTransContext(this);
+          var trans = findTranslation(id, context);
+          if (!trans) return __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["e"
+          /* buildArr */
+          ])(strings, exprs); // splits string & capturing group into tokens
+          //
+
+          var translatedTokens = trans[0].split(separator);
+          return translatedTokens.map(function (token) {
+            var slotIdMatch = token.match(slotIdRegexp); // slotIdMatch is not null only when the token is a variable slot (${xx})
+
+            return slotIdMatch ? exprs[+slotIdMatch[1]] : token;
+          });
+        }
+
+        return strings;
+      }
+
+      function msgid(strings) {
+        /* eslint-disable no-new-wrappers */
+        if (strings && strings.reduce) {
+          for (var _len3 = arguments.length, exprs = new Array(_len3 > 1 ? _len3 - 1 : 0), _key3 = 1; _key3 < _len3; _key3++) {
+            exprs[_key3 - 1] = arguments[_key3];
+          }
+
+          var result = new String(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["d"
+          /* buildStr */
+          ])(strings, exprs));
+          result._strs = strings;
+          result._exprs = exprs;
+          return result;
+        }
+
+        return strings;
+      }
+
+      function gettext(id) {
+        var context = getTransContext(this);
+        var trans = findTranslation(id, context);
+        return trans ? trans[0] : id;
+      }
+
+      var _ = gettext;
+
+      function ngettext() {
+        for (var _len4 = arguments.length, args = new Array(_len4), _key4 = 0; _key4 < _len4; _key4++) {
+          args[_key4] = arguments[_key4];
+        }
+
+        if (true) __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__validation__["a"
+        /* validateNgettextMsgid */
+        ])(args[0]);
+        var id = maybeDedent(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["b"
+        /* getMsgid */
+        ])(args[0]._strs, args[0]._exprs));
+        var n = args[args.length - 1];
+        if (true) __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__validation__["b"
+        /* validateNgettextNumber */
+        ])(n);
+        var forms = args.slice(1, -1);
+        forms.unshift(args[0].toString());
+
+        if (true) {
+          __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__validation__["c"
+          /* validateNgettextPluralForms */
+          ])(conf.getDefaultPluralFormsCount(), forms.length);
+        }
+
+        var trans = findTranslation(id, getTransContext(this));
+
+        if (trans) {
+          var _pluralFn = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["f"
+          /* getPluralFnForTrans */
+          ])(conf);
+
+          return maybeDedent(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__utils__["c"
+          /* msgid2Orig */
+          ])(_pluralFn(n, trans), args[0]._exprs));
+        }
+
+        var pluralFn = conf.getDefaultPluralFn();
+        return maybeDedent(pluralFn(n, forms));
+      }
+
+      function addLocale(locale, data) {
+        conf.addLocale(locale, data);
+      }
+
+      function useLocale(locale) {
+        conf.setCurrentLocale(locale);
+      }
+
+      function setDedent(value) {
+        conf.setDedent(Boolean(value));
+      }
+
+      function useLocales(locales) {
+        conf.setCurrentLocales(locales);
+      }
+
+      function setDefaultLang(lang) {
+        if (true) __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__validation__["d"
+        /* validateLang */
+        ])(lang);
+        conf.setDefaultLang(lang);
+      }
+
+      function c(context) {
+        var ctx = new Context(context);
+        return {
+          t: t.bind(ctx),
+          jt: jt.bind(ctx),
+          gettext: gettext.bind(ctx),
+          ngettext: ngettext.bind(ctx)
+        };
+      }
+      /***/
+
+    },
+    /* 5 */
+
+    /***/
+    function (module, exports, __webpack_require__) {
+      "use strict";
+
+      function dedent(strings) {
+        var raw = void 0;
+
+        if (typeof strings === "string") {
+          // dedent can be used as a plain function
+          raw = [strings];
+        } else {
+          raw = strings.raw;
+        } // first, perform interpolation
+
+
+        var result = "";
+
+        for (var i = 0; i < raw.length; i++) {
+          result += raw[i]. // join lines when there is a suppressed newline
+          replace(/\\\n[ \t]*/g, ""). // handle escaped backticks
+          replace(/\\`/g, "`");
+
+          if (i < (arguments.length <= 1 ? 0 : arguments.length - 1)) {
+            result += arguments.length <= i + 1 ? undefined : arguments[i + 1];
+          }
+        } // now strip indentation
+
+
+        var lines = result.split("\n");
+        var mindent = null;
+        lines.forEach(function (l) {
+          var m = l.match(/^(\s+)\S+/);
+
+          if (m) {
+            var indent = m[1].length;
+
+            if (!mindent) {
+              // this is the first indented line
+              mindent = indent;
+            } else {
+              mindent = Math.min(mindent, indent);
+            }
+          }
+        });
+
+        if (mindent !== null) {
+          result = lines.map(function (l) {
+            return l[0] === " " ? l.slice(mindent) : l;
+          }).join("\n");
+        } // dedent eats leading and trailing whitespace too
+
+
+        result = result.trim(); // handle escaped newlines at the end to ensure they don't get stripped too
+
+        return result.replace(/\\n/g, "\n");
+      }
+
+      if (true) {
+        module.exports = dedent;
+      }
+      /***/
+
+    }])
+  );
+});
 
 /***/ }),
 
@@ -219,7 +1566,10 @@ eval("(function webpackUniversalModuleDefinition(root, factory) {\n  if (true) m
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("/* eslint-disable global-require */\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./dist/ttag.js */ \"./node_modules/ttag/dist/ttag.js\");\n}\n\n//# sourceURL=webpack:///./node_modules/ttag/index.js?");
+/* eslint-disable global-require */
+if (false) {} else {
+  module.exports = __webpack_require__(/*! ./dist/ttag.js */ "./node_modules/ttag/dist/ttag.js");
+}
 
 /***/ }),
 
@@ -231,7 +1581,20 @@ eval("/* eslint-disable global-require */\nif (false) {} else {\n  module.export
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"setupi18n\", function() { return setupi18n; });\n/* harmony import */ var ttag__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ttag */ \"./node_modules/ttag/index.js\");\n/* harmony import */ var ttag__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ttag__WEBPACK_IMPORTED_MODULE_0__);\n\nasync function setupi18n() {\n  const locale = document.cookie;\n\n  if (locale === 'uk') {\n    const data = await __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.t.bind(null, /*! ../i18n/uk.po.json */ \"./i18n/uk.po.json\", 3));\n    Object(ttag__WEBPACK_IMPORTED_MODULE_0__[\"addLocale\"])(locale, data);\n    Object(ttag__WEBPACK_IMPORTED_MODULE_0__[\"useLocale\"])(locale);\n  }\n}\n\n//# sourceURL=webpack:///./src/i18nSetup.js?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setupi18n", function() { return setupi18n; });
+/* harmony import */ var ttag__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ttag */ "./node_modules/ttag/index.js");
+/* harmony import */ var ttag__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ttag__WEBPACK_IMPORTED_MODULE_0__);
+
+async function setupi18n() {
+  const locale = document.cookie;
+
+  if (locale === 'uk') {
+    const data = await __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.t.bind(null, /*! ../i18n/uk.po.json */ "./i18n/uk.po.json", 3));
+    Object(ttag__WEBPACK_IMPORTED_MODULE_0__["addLocale"])(locale, data);
+    Object(ttag__WEBPACK_IMPORTED_MODULE_0__["useLocale"])(locale);
+  }
+}
 
 /***/ }),
 
@@ -243,7 +1606,38 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var ttag__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ttag */ \"./node_modules/ttag/index.js\");\n/* harmony import */ var ttag__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ttag__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _i18nSetup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./i18nSetup */ \"./src/i18nSetup.js\");\n\n\n\ndocument.getElementById('en-select').onclick = ev => {\n  ev.preventDefault();\n  document.cookie = 'en';\n  window.location.reload();\n};\n\ndocument.getElementById('uk-select').onclick = ev => {\n  ev.preventDefault();\n  document.cookie = 'uk';\n  window.location.href = '/';\n  window.location.reload();\n};\n\nconst render = () => {\n  document.getElementById('content').innerHTML = `\n  <h2>${ttag__WEBPACK_IMPORTED_MODULE_0__[\"t\"]`Hello with ttag`}</h2>\n  `;\n};\n\nasync function start() {\n  await Object(_i18nSetup__WEBPACK_IMPORTED_MODULE_1__[\"setupi18n\"])();\n  render();\n}\n\nstart();\n\n//# sourceURL=webpack:///./src/index.js?");
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var ttag__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ttag */ "./node_modules/ttag/index.js");
+/* harmony import */ var ttag__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ttag__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _i18nSetup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./i18nSetup */ "./src/i18nSetup.js");
+
+
+
+document.getElementById('en-select').onclick = ev => {
+  ev.preventDefault();
+  document.cookie = 'en';
+  window.location.reload();
+};
+
+document.getElementById('uk-select').onclick = ev => {
+  ev.preventDefault();
+  document.cookie = 'uk';
+  window.location.href = '/';
+  window.location.reload();
+};
+
+const render = () => {
+  document.getElementById('content').innerHTML = `
+  <h2>${ttag__WEBPACK_IMPORTED_MODULE_0__["t"]`Hello with ttag`}</h2>
+  `;
+};
+
+async function start() {
+  await Object(_i18nSetup__WEBPACK_IMPORTED_MODULE_1__["setupi18n"])();
+  render();
+}
+
+start();
 
 /***/ })
 
