@@ -4,7 +4,7 @@ import cookies from 'browser-cookies';
 export async function setupi18n() {
   const locale = cookies.get('lang');
   if (locale === 'uk') {
-    const data = await import('../i18n/uk.po.json');
+    const data = await import('../dist/uk.po.json');
     addLocale(locale, data);
     useLocale(locale);
   }

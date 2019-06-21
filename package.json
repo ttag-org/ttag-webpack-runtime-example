@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "update": "ttag update i18n/uk.po ./src && npm run po2json",
-    "po2json": "ttag po2json i18n/uk.po --format=compact > i18n/uk.po.json",
-    "build": "NODE_ENV=production ASSET_PATH=./dist/ webpack"
+    "update": "ttag update i18n/uk.po ./src",
+    "po2json": "ttag po2json i18n/uk.po --format=compact > dist/uk.po.json",
+    "build": "npm run po2json && NODE_ENV=production ASSET_PATH=./dist/ webpack"
   },
   "repository": {
     "type": "git",
