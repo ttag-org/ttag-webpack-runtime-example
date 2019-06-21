@@ -1705,6 +1705,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ttag__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(ttag__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _i18nSetup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./i18nSetup */ "./src/i18nSetup.js");
 
+ // executing i18n setup before any content render ensures that no 't' is executed before locale setup.
+
+async function start() {
+  await Object(_i18nSetup__WEBPACK_IMPORTED_MODULE_1__["setupi18n"])();
+  document.getElementById('content').innerHTML = ttag__WEBPACK_IMPORTED_MODULE_0__["t"]`Hello with ttag`;
+} // subscribe to language switch events
 
 
 document.getElementById('en-select').onclick = ev => {
@@ -1716,11 +1722,6 @@ document.getElementById('uk-select').onclick = ev => {
   ev.preventDefault();
   Object(_i18nSetup__WEBPACK_IMPORTED_MODULE_1__["switchLang"])('uk');
 };
-
-async function start() {
-  await Object(_i18nSetup__WEBPACK_IMPORTED_MODULE_1__["setupi18n"])();
-  document.getElementById('content').innerHTML = ttag__WEBPACK_IMPORTED_MODULE_0__["t"]`Hello with ttag`;
-}
 
 start();
 
