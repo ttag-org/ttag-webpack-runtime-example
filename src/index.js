@@ -1,15 +1,16 @@
 import { t } from 'ttag';
 import { setupi18n } from './i18nSetup';
+import cookies from 'browser-cookies';
 
 document.getElementById('en-select').onclick = (ev) => {
   ev.preventDefault();
-  document.cookie = 'en';
+  cookies.set('lang', 'en');
   window.location.reload();
 }
 
 document.getElementById('uk-select').onclick = (ev) => {
   ev.preventDefault();
-  document.cookie = 'uk';
+  cookies.set('lang', 'uk');
   window.location.href= '/'
   window.location.reload();
 }
